@@ -5,7 +5,6 @@ export default function Addfrom() {
     const [name, setName]=useState("");
     const [gender, setGender]=useState("");
     
-    
     return(
         <>
             <section className="container">
