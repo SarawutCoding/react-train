@@ -4,8 +4,6 @@ import { useState } from "react"
 export default function Addfrom() {
     const [name, setName]=useState("");
     const [gender, setGender]=useState("");
-    console.log(name);
-    console.log(gender);
     
     
     return(
