@@ -22,7 +22,7 @@ export default function App() {
       <div className="App">
         <Header title="My ไอบลูหนังหมา" />
         <main>
-          <Addfrom/>
+          <Addfrom data={data} setData={setData}/>
           <Personlist data={data} deleteUser={deleteUser}/>
         </main>
       </div>
