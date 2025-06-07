@@ -22,7 +22,7 @@ export default function Addfrom() {
                         <option>ชาย</option>
                         <option>หญิง</option>
                     </select>
-                    <button type="submit" className="btn-save">บันทึก</button>
+                    <button type="submit" className="btn-save" disabled={name.trim()===""}>บันทึก</button>
                 </form>
             </section>
         </>

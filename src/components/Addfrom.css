@@ -40,3 +40,7 @@ select{
     margin: 10px;
     background: green;
 }
+
+.btn-save:disabled{
+    background: gray;
+}
