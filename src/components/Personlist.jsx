@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Personlist.css"
 import User from "./User";
+import { FaEye } from "react-icons/fa"; //เปิด
+import { LuEyeOff } from "react-icons/lu"; //ปิด
 export default function Personlist(props) {
     const {data, deleteUser}=props;
     const [show, setShow] = useState(true);
@@ -12,7 +14,9 @@ export default function Personlist(props) {
         <div className="container">
             <div className="header">
                 <h1 style={myStyle}>จำนวนประชากร {data.length} คน</h1>
-                <button onClick={() => setShow(!show)}>{show ? "ซ่อน" : "แสดง"}</button> 
+                <span onClick={()=> setShow(!show)}>
+                    {show ? <FaEye size={40}/> : <LuEyeOff size={40}/>}
+                </span>
             </div>
             
             <ul>

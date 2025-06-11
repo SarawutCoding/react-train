@@ -13,22 +13,26 @@ export default function App() {
     { id: 3, name: "โมโมะ", gender: "female" }
   ]);
 
+  const [theme, setTheme] = useState(localStorage.getItem("mode") || "light");
+
   function deleteUser(id) {
     const result = data.filter((user)=>user.id!==id);
     setData(result);
   }
 
   useEffect(()=>{
-    console.log("render Component");
-  })
+    localStorage.setItem("mode", theme);
+  },[theme])
   return (
     <>
-      <div className="App">
-        <Header title="My ไอบลูหนังหมา" />
-        <main>
-          <Addfrom data={data} setData={setData}/>
-          <Personlist data={data} deleteUser={deleteUser}/>
-        </main>
+      <div className={theme}>
+        <div className="App">
+          <Header title="My Blue React" theme={theme} setTheme={setTheme} />
+          <main>
+            <Addfrom data={data} setData={setData}/>
+            <Personlist data={data} deleteUser={deleteUser}/>
+          </main>
+        </div>
       </div>
     </>
   );
