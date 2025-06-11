@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Personlist from "./components/Personlist";
 import Addfrom from "./components/Addfrom";
 import "../public/css/App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function App() {
   const [data, setData] = useState([
@@ -17,6 +17,10 @@ export default function App() {
     const result = data.filter((user)=>user.id!==id);
     setData(result);
   }
+
+  useEffect(()=>{
+    console.log("render Component");
+  })
   return (
     <>
       <div className="App">
